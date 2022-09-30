@@ -4,15 +4,15 @@
 
 > PINN(Physical Informed Neural Network) 求解频域 3D Maxwell 方程：
 > $$
-\nabla\times\nabla\times \bold{E} + \epsilon_r k^2 \bold{E} = \bold{0}
+> \nabla\times\nabla\times {E} + \epsilon_r k^2 {E} = {0}
 > $$
 > 在立方体内部无源，因此有 
 > $$
-> \nabla \cdot \bold{E} = 0
+> \nabla \cdot {E} = 0
 > $$
 > 则可以化简得出
 > $$
-> \nabla^2 \bold{E} + \epsilon_r k^2 \bold{E} = \bold{0}
+> \nabla^2 {E} + \epsilon_r k^2 {E} = {0}
 > $$
 > 
 > 仿真环境如图1所示：
@@ -21,11 +21,11 @@
 > - 四个环面（上、前、下、右）边界为 PEC（理想导体边界条件），右面为 ABC（吸收边界条件）。
 > - PEC 边界条件方程为：
 > $$
-> \bold{n}\times(\nabla\times\bold{E})=0
+> {n}\times(\nabla\times{E})=0
 > $$
 > - ABC(Absorbing boundary condition，吸收边界条件)的边界方程为
 > $$
-> \bold{n}\times\bold{E}=0 \\
+> {n}\times{E}=0 \\
 > \frac{\partial E_n}{\partial n} = 0
 > $$
 
