@@ -33,9 +33,11 @@
 ## 模型架构
 
 > PDE方程求解的原理如下图所示：
+> 
 > <img src="./images/model_architecture.png" width=400 >
 
 > 采用 `mindelec.architecture` 提供的 `MultiScaleFCCell` 模型。采用多通道残差网络结合Sin激活函数的网络架构，其结构如图所示：
+> 
 > ![](images/multi-scale-NN.png)
 
 ## 数据集
@@ -183,12 +185,15 @@ python eval.py
 ### 推理结果
 
 > - 波导管输入面结果（最大差值 $E_z = 0.04032$，其中最大值为 $1.0$，而 $E_x, E_y$ 分别外 0.00021 和 0.00002，均较小）。验证截图如下：
+> 
 > ![](./images/cavity_eval.jpg)
 > 
 > - 波导管输入截面 $(x=0)$ 的真实值、预测值和差值如下图所示，其中仅有 $E_z$ 方向有输入，其他方向输入为0，因此此处给出 $E_z$ 方向)：
+> 
 > ![](./images/waveguide_Ez_cavity.png)
 > 
 > - 波导管在 $x=0$ 截面，该面上只有 $E_z$ 分量的电场，场强由前述训练数据给出。下图绘制出三个中心面，即 $x=1, y=1, z=1$ 三个面上的场强分布。从上到下分别是 $x=1, y=1, z=1$ 三个截面，从左到右分别是每个截面上的 $E_x, E_y, E_z$ 分量，从图中可以看出，$E_x, E_y$ 几乎为总 $0$，由于波数是 16,在长为 2 的区间内波数大约为 $ 16 / (2\pi) * 2 = 5.1$ 个周期正弦波，和图中第(2,3) 和 (3,3) 位置的波形吻合，验证了结果的正确性。
+> 
 > ![](./images/domain_predict_cavity.png)
 
 
@@ -219,7 +224,6 @@ python eval.py
 
 | Parameters          | Ascend                      |
 | ------------------- | --------------------------- |
-| Model Version       | ResNet18                    |
 | Resource            | Ascend: 1*Ascend 910, CPU: 24vCPUs 96GB    |
 | Uploaded Date       | 9/30/2022 (month/day/year) |
 | MindSpore Version   | 1.15.1                       |
@@ -228,6 +232,8 @@ python eval.py
 | Model for inference | 220KB (.ckpt)             |
 | Total time                 | 1.33 Minutes                | 
 
+## 参考资料
+[Nvidia Modulus](https://docs.nvidia.com/deeplearning/modulus/text/intermediate/em.html#)
 
 ## 贡献指南
 
