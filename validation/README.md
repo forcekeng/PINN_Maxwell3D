@@ -1,0 +1,2 @@
+## 说明：
+该文件夹下的 .CSV 文件包含[Nvidia Modulus](https://docs.nvidia.com/deeplearning/modulus/user_guide/intermediate/em.html)在电磁学仿真中所用的数据。本项目两个工程（3D_dielectric_slab/ 和 3D_waveguide_cavity/）均不需要该原始数据，已将所需数据转换成 .npy 文件包含在工程中。
