@@ -15,7 +15,7 @@
 > \nabla^2 {E} + \epsilon_r k^2 {E} = {0}
 > $$
 > 仿真环境如图1所示：
-> ![](images/3Dwaveguide_geo.png)
+> <img src="./images/3Dwaveguide_geo.png" width=300 >
 > 仿真的立方体长、宽、高尺寸均为 $2$，取立方体中心为坐标原点，向右、向上、向外分别为 $x,y,z$ 方向。
 > - 四个环面（上、前、下、右）边界为 PEC（理想导体边界条件），右面为 ABC（吸收边界条件）。
 > - PEC 边界条件方程为：
@@ -31,7 +31,7 @@
 ## 模型架构
 
 > PDE方程求解的原理如下图所示：
-> ![](./images/model_architecture.png)
+> <img src="./images/model_architecture.png" width=400 >
 
 > 采用 `mindelec.architecture` 提供的 `MultiScaleFCCell` 模型。采用多通道残差网络结合Sin激活函数的网络架构，其结构如图所示：
 > ![](images/multi-scale-NN.png)
@@ -187,7 +187,7 @@ python eval.py
 > ![](./images/waveguide_Ez_cavity.png)
 > 
 > - 波导管在 $x=0$ 截面，该面上只有 $E_z$ 分量的电场，场强由前述训练数据给出。下图绘制出三个中心面，即 $x=1, y=1, z=1$ 三个面上的场强分布。从上到下分别是 $x=1, y=1, z=1$ 三个截面，从左到右分别是每个截面上的 $E_x, E_y, E_z$ 分量，从图中可以看出，$E_x, E_y$ 几乎为总 $0$，由于波数是 16,在长为 2 的区间内波数大约为 $ 16 / (2\pi) * 2 = 5.1$ 个周期正弦波，和图中第(2,3) 和 (3,3) 位置的波形吻合，验证了结果的正确性。
-> ![](images/domain_predict_cavity.png)
+> ![](./images/domain_predict_cavity.png)
 
 
 ## 性能

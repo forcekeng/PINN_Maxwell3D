@@ -16,7 +16,7 @@
 > $$
 > 
 > 仿真环境如图1所示：
-> ![](images/3Dslab_geo.png)
+> <img src="./images/3Dslab_geo.png" width=300 >
 > - 仿真的立方体长、宽、高尺寸均为 $1$，取立方体中心为坐标原点，向右、向上、向外分别为 $x,y,z$ 方向。实心导体贯穿立方体且位于立方体中心，其截面尺寸为 $0.2\times 0.2$。
 > - 四个环面（上、前、下、右）边界为 PEC（理想导体边界条件），右面为 ABC（吸收边界条件）。
 > - PEC 边界条件方程为：
@@ -31,7 +31,7 @@
 
 ## 模型架构
 > PDE方程求解的原理如下图所示：
-> ![](./images/model_architecture.png)
+> <img src="./images/model_architecture.png" width=400 >
 
 > 采用 `mindelec.architecture` 提供的 `MultiScaleFCCell` 模型。采用多通道残差网络结合Sin激活函数的网络架构，其结构如图所示：
 > ![](images/multi-scale-NN.png)
@@ -189,18 +189,17 @@ python eval.py
 
 ### 推理结果
 > - 波导管输入面结果（最大差值 $E_z = 0.05378$, 其中最大值为 $2.082099191$,而在 $E_x, E_y$ 方向的差值均很小，分别为 $0.00221, 0.00071$）。验证截图如下：
-> ![](images/slab_eval.jpg)
+> ![](./images/slab_eval.jpg)
 >
 > - 其中图中横坐标是各个点，纵坐标是值，例如第图最上面为 $E_z$ 的预测值和真实值。共有 13277 个点，真实值为绿色线连接，预测值为红色线，可以看出两者几乎一致。最下面的图（蓝色曲线）给出了真实值和预测值的差值。
 > - $E_x, E_y$ 的真实值均为0，因此只给出预测值，预测值也接近0. 
 > ![](./images/waveguide_predict_slab.png)
 > 真实值由$(y,z)$ 坐标给出，难以绘制二维图。因此仅给出预测值结果，如下图：
-> ![](./images/waveguide_predict_2d_predict.png)
+> <img src="./images/waveguide_predict_2d_predict.png" width=200 >
 >
 > - 波导管在 $x=-0.5$ 截面，该面上只有 $E_z$ 分量的电场，场强由前述训练数据给出。下图绘制出三个中心面，即 $x=0, y=0, z=0$ 三个面上的场强分布。
 > ![](images/domain_predict_slab.png)
-> - 波导管输入截面 $(x=0)$ 的真实值、预测值和差值如下图所示，其中仅有 $E_z$ 方向有输入，其他方向输入为0，因此此处给出 $E_z$ 方向)：
-> ![](./images/waveguide_Ez_cavity.png)
+> 
 > - 从图中可以看出，$E_x, E_y$ 几乎为总 $0$。
 > - 由于中间的介质电导率为 $1.5$，而周围的为 $1.0$，可以看到电磁波主要在中间的电介质中传播。
 
