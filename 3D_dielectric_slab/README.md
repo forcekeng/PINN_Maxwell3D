@@ -3,9 +3,7 @@
 # 模型名称
 
 > PINN(Physical Informed Neural Network) 求解频域 3D Maxwell 方程：
-$$
-\nabla\times\nabla\times {E} + \epsilon_r k^2 {E} = {0}
-$$
+$$ \nabla\times\nabla\times {E} + \epsilon_r k^2 {E} = {0} $$
 > 在立方体内部无源，因此有 
 > $$
 > \nabla \cdot {E} = 0
